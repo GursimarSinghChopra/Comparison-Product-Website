@@ -1,0 +1,5 @@
+[Wed May 16 22:08:43.782982 2018] [mpm_winnt:notice] [pid 12208:tid 840] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Wed May 16 22:08:43.782982 2018] [mpm_winnt:notice] [pid 12208:tid 840] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Wed May 16 22:08:43.782982 2018] [core:notice] [pid 12208:tid 840] AH00094: Command line: 'D:\\ip project\\project 1/apache2/bin/httpd_usbwv8.exe -d D:/ip project/project 1/apache2'
+[Wed May 16 22:08:43.790911 2018] [mpm_winnt:notice] [pid 12208:tid 840] AH00418: Parent: Created child process 13208
+[Wed May 16 22:08:44.340604 2018] [mpm_winnt:notice] [pid 13208:tid 852] AH00354: Child: Starting 64 worker threads.

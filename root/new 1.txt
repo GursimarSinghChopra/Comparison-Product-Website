@@ -1,0 +1,30 @@
+<?php
+	include"databaseConnect.php";
+	// Counting number of checked phones.
+	$checked_count = count($_POST['phone']);
+	echo "You have selected ".$checked_count." Phones: <br/>";
+	// Loop to store and display values of individual checked checkbox.
+	foreach($_POST['phone'] as $selected) 
+{
+	//echo "<p>".$selected ."</p>";
+	// search the database
+					echo "<h2>show configuration</h2>";
+				$sql = "SELECT * FROM mobile_table WHERE NAME LIKE '%" . $selected. "%'";
+					$result = $mysqli ->query($sql);
+						if ($result->num_rows > 0) {
+						// output data of each row
+						echo "<br>";
+	}
+	while($row = $result->fetch_assoc()) {
+			echo "Sno: " ."- ".$row["Sno"]."<br>". "NAME" ."- ". $row["NAME"]. "<br>"."Battery capacity (mAh)"."- ". $row["Battery capacity (mAh)"]."<br>". "Screen size (inches)" ."- ". $row["Screen size (inches)"]."<br>". "Processor" ."- ".$row["Processor"]."<br>". "RAM" ."- ". $row["RAM"]."<br>". "Internal storage" ."- ". $row["Internal storage"]."<br>". "Operating System" ."- ". $row["Operating System"]."<br>". "Rear camera" ."- ". $row["Rear camera"]."<br>". "Front camera" ."- ". $row["Front camera"] ."<br>". "Number of SIMs" ."- ". $row["Number of SIMs"]."<br>". "Price" ."- ". $row["Price"];
+						}
+					
+					//$mysqli ->close();
+
+}
+
+?>
+<?php
+echo '<table cellpadding="0" cellspacing="0" class="db-table">';
+		echo '<tr>Sno</tr><tr>Name</tr><tr>Battery capacity</tr><tr>Screen Size</tr>';
+?>

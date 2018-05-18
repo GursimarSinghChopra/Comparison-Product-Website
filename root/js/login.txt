@@ -1,0 +1,148 @@
+<!--<body background="background/bg2.jpg">
+
+	<div class="container">
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4">
+	<div class="jumbotron" style="margin-top:250px";"margin-bottom:250px";>
+	<h3>Please Login</h3>
+	<br>
+	<form>
+	<div class="form-group">
+	<input type="email" class="form-control" placeholder="Enter Username">
+	</div>
+	
+	<div class="form-group">
+	<input type="password" class="form-control" placeholder="Password">
+	</div>
+	
+	<div class="checkbox">
+	<label>
+	<input type="checkbox">
+	Rember memory</label>
+	</div>
+	
+	<button type="submit" class="btn btn-primary form -control">Login </button>
+	</form>
+	</div>
+	</div>
+	<div class="col-lg-4"></div>
+	</div>
+	
+	</div>-->
+	
+
+
+
+
+
+
+
+<div class="container">
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4">
+	<div class="jumbotron" style="margin-top:250px">
+	<h3><strong>Please Sign Up</strong></h3>
+	
+	<div id="wrapper">
+			<form method="POST" action="index.php" onsubmit="return Validate()" name="vForm">
+					<div>
+							<table><tr><td>Username</td><td><input type="text" name="username" class="textInput" placeholder="Username">
+							<div id="name_error" class="val_error"></div></td></tr>
+					</div>
+					<div>
+							<tr><td>Email</td><td><input type="email" name="email" class="textInput" placeholder="Email">
+							<div id="email_error" class="val_error"></div><td></tr>
+					</div>
+					<div>
+							<tr><td>Phone No</td><td><input type="phonenumber" name="phonenumber" class="textInput" placeholder="Phone No">
+							<div id="phonenumber_error" class="val_error"></div><td></tr>
+					</div>
+					<div>
+							<tr><td>Password</td><td><input type="password" name="password" class="textInput" placeholder="Password"></td></tr>
+					</div>
+					<div>
+							<tr><td>Confirm Password </td><td> <input type="password" name="password_confirmation" class="textInput" placeholder="password confirmation">
+							<div id="password_error" class="val_error"></div></td></tr>
+					</div>
+					<div></table><br>
+							<center><input type="submit" class="btn btn-success" name="register" value="Register">
+					</div>
+			</form>
+	</div>
+	
+	</div>
+	</div>
+				<div class="col-lg-4"></div>
+	</div>
+</form>
+</body>
+<!-- add javascript here -->
+					<script type="text/javascript">
+						// GETTING ALL INPUT TEXT FIELDS
+						var username = document.forms["vForm"]["username"];
+						var email = document.forms["vForm"]["email"];
+						var password = document.forms["vForm"]["password"];
+						var password_confirmation = document.forms["vForm"]["password_confirmation"];
+						// GETTING ALL ERROR OBJECTS
+						var name_error = document.getElementById("name_error");
+						var email_error = document.getElementById("email_error");
+						var password_error = document.getElementById("password_error");
+						// SETTING ALL EVENT LISTENERS
+						username.addEventListener("blur", nameVerify, true);
+						email.addEventListener("blur", emailVerify, true);
+						function Validate(){
+							// VALIDATE USERNAME
+							if(username.value == ""){
+								name_error.textContent = "Username is required";
+								username.style.border = "1px solid red";
+								username.focus();
+								return false;
+							}
+							// VALIDATE EMAIL
+							if(email.value == ""){
+								email_error.textContent = "Email is required";
+								email.style.border = "1px solid red";
+								email.focus();
+								return false;
+							}
+							// VALIDATE PHONE NUMBER
+							if(phonenumber.value == ""){
+								phonenumber_error.textContent = "Phonenumber is required";
+								phonenumber.style.border = "1px solid red";
+								phonenumber.focus();
+								return false;
+							}
+							// VALIDATE PASSWORD
+							if (password.value != password_confirmation.value) {
+								password_error.textContent = "The two passwords do not match";
+								password.style.border = "1px solid red";
+								password_confirmation.style.border = "1px solid red";
+								password.focus();
+								return false;
+							}
+							// PASSWORD REQUIRED
+							if (password.value == "" || password_confirmation.value == "") {
+								password_error.textContent = "Password required";
+								password.style.border = "1px solid red";
+								password_confirmation.style.border = "1px solid red";
+								password.focus();
+								return false;
+							}
+						}
+						// ADD EVENT LISTENERS
+						function nameVerify(){
+							if (username.value != "") {
+								name_error.innerHTML = "";
+								username.style.border = "1px solid #110E0F";
+								return true;
+							}
+						}
+						function emailVerify(){
+							if (email.value != "") {
+								email_error.innerHTML = "";
+								email.style.border = "1px solid #110E0F";
+								return true;
+							}
+						}
+</script>
+<!--end of javascript part-->
